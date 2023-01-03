@@ -26,6 +26,11 @@ public class DemoApplication {
 		}
 
 		if (portNumber == null) {
+			portNumber = System.getenv("APP_PORT");
+			logger.debug("Sys ENV portNumber : " + portNumber);
+		}
+
+		if (portNumber == null) {
 			portNumber = DEFAULT_PORT;
 		}
 
